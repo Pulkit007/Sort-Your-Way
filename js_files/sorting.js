@@ -2,7 +2,7 @@ let arr = [];
 
 const fillContainer = () => {
   for (var i = 0; i < 100; i++) {
-    arr[i] = Math.floor(Math.random() * 101) + 1;
+    arr[i] = Math.floor(Math.random() * 101);
   }
 
   var cnt = document.getElementById("arr_cnt");
