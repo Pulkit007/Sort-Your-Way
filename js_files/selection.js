@@ -15,27 +15,30 @@ async function handleSort() {
     .getElementsByTagName("div");
 
   for (var i = 0; i < 100; i++) {
-    for (var j = 0; j < 100 - i - 1; j++) {
-      const transform1 = childDivs[j].offsetHeight;
-      const transform2 = childDivs[j + 1].offsetHeight;
+    var min_idx = i;
+    var transform1 = childDivs[i].offsetHeight;
+    for (var j = i + 1; j < 100; j++) {
+      var transform2 = childDivs[j].offsetHeight;
 
+      childDivs[i].style.background = "red";
       childDivs[j].style.background = "red";
-      childDivs[j + 1].style.background = "red";
+      await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, 50)
+      );
       if (transform1 > transform2) {
-        await new Promise((resolve) =>
-          setTimeout(() => {
-            resolve();
-          }, 100)
-        );
-        swap(childDivs[j], childDivs[j + 1]);
+        min_idx = j;
+        transform1 = transform2;
       }
+      childDivs[i].style.background = "yellow";
       childDivs[j].style.background = "yellow";
-      childDivs[j + 1].style.background = "yellow";
     }
-    childDivs[100 - i - 1].style.background = "green";
+    swap(childDivs[i], childDivs[min_idx]);
+    childDivs[i].style.background = "green";
   }
 }
 
-var btn = document.getElementById("bubble");
+var btn = document.getElementById("selection");
 
 btn.onclick = handleSort;
