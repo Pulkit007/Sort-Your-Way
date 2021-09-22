@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main_page {
+  background-color: #000;
+  min-height: 100vh;
+  color: white;
+}
+
+.heading {
+  text-align: center;
+  width: 100vw;
+  margin-bottom: 5px;
+  color: cyan;
+}
+
+.btn-container {
+  width: 100%;
+  padding-left: 30px;
+  display: flex;
+}
+
+.btn-container div {
+  margin: auto;
+}
+
+.btn {
+  border-color: cyan;
+  color: cyan;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: cyan;
+  color: #000;
+}
+
+.new-array {
+  border-color: red;
+  color: red;
+}
+
+.new-array:hover {
+  background-color: red;
+  color: white;
+}
+
+#arr_cnt {
+  margin: auto;
+  width: 75vw;
+  height: 65vh;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.bars {
+  background-color: yellow;
+  width: 0.75vw;
+  min-width: 0.4vw;
+  margin-left: 0.32vw;
+}
